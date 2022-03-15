@@ -1,0 +1,12 @@
+.label1 {
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  .result {
+    font-weight: bold;
+  }
+  
+  .hidden {
+      display: none;
+  }
