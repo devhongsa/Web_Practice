@@ -13,7 +13,8 @@ class App extends React.Component {
   async componentDidMount() {
     const manager = await lottery.methods.manager().call();
     const players = await lottery.methods.getPlayers().call();
-    const balance = await web3.eth.getBalance(lottery.options.address);
+    //const balance = await web3.eth.getBalance(lottery.options.address);
+    const balance = await lottery.methods.treasury().call();
 
     this.setState({ manager, players, balance });
   }
@@ -21,9 +22,9 @@ class App extends React.Component {
   onSubmit = async (event) => {
     event.preventDefault();
 
-    if (this.state.value <= 0.01 || this.state.value !== Number){
+    if (Number(this.state.value) <= 0.01){
       alert('please input correct number');
-      this.setState({value: ''})
+      //this.setState({value: ''})
       return ;
     }
 
@@ -69,8 +70,11 @@ class App extends React.Component {
             <label>Amount of ether to enter</label>
             <input
               className="input"
+              onChange={(event) => {
+                this.setState({ value: event.target.value })
+                console.log(event.target.value)
+              }}
               value={this.state.value}
-              onChange={(event) => this.setState({ value: event.target.value })}
             />
           </div>
           <button>Enter</button>
