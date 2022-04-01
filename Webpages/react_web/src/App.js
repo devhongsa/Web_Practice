@@ -1,6 +1,6 @@
 //useEffect practice
 
-import Button from "./Button";
+import Button from "./components/Button";
 import styles from "./css/App.module.css"
 import { useState, useEffect } from "react";
 
@@ -28,7 +28,7 @@ function App() {
 //keyword값이 변하면 실행됨.
 
   useEffect(()=>{
-    console.log("when keyword and counter changes")
+    console.log("when keyword or counter changes")
   },[keyword, counter])
 // keyword나 counter 둘중에 하나가 바뀌면 실행됨
 
