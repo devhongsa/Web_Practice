@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import MovieCp from '../components/MovieCp';
 
+
 function Home(){
     const [loading, setLoading] = useState(true);
     const [movies, setMovies] = useState([]);
