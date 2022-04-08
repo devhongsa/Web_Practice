@@ -1,16 +1,22 @@
-function Panel(){
+import styles from "../css/Panel.module.css"
+
+function Panel(props){
+    console.log('hi')
+
     return(
-        <div className="panel">
+        <div className={styles.panel}>
           <div className="panel-heading">
-            <h3 className="panel-title"></h3>
+            <h3 className="panel-title">{props.src.split('.')[0]}</h3>
           </div>
-          <div className="panel-body">
-            <img alt="140x140" className="img-rounded img-center" src="images/Milli.png" />
+          <div className="panel-img">
+            <img alt="140x140" className={styles.img} src= {'img/'+props.src} />
             <br/><br/>
-            <div className="pannel-button"> 
-              <button className="btn btn-default btn-vote" type="button" data-id="0">Vote</button>
-            </div>  
           </div>
+          <div className="panel-button"> 
+              <button className="btn btn-default btn-vote" type="button" data-id={props.id}>Vote</button>
+          </div>  
         </div>
     )
-}
+};
+
+export default Panel;
