@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import MovieCp from '../components/MovieCp';
+import MovieCp from '../components/MovieCp.js';
 
 
 function Home(){
