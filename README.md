@@ -1,1 +1,1 @@
-# Web_SmartContract
+# Web_Practice
